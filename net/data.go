@@ -1,13 +1,10 @@
 package net
 
 import (
-	"errors"
 	"fmt"
 
 	task "github.com/nodias/go-TaskManPrac/task"
 )
-
-var ErrTaskNotExist = errors.New("task does not exist")
 
 type ID string
 
