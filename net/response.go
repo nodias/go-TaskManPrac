@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/nodias/go-TaskManPrac/task"
 )
 
 var ErrTaskNotExist = errors.New("task does not exist")
@@ -40,4 +41,10 @@ func (r *ResponseErr) UnmarshalJSON(b []byte) error {
 	default:
 		return errors.New("ResponseErr unmarshalJSON failed")
 	}
+}
+
+type Response struct{
+	Id ID
+	Task task.Task
+    Err ResponseErr
 }

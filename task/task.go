@@ -15,17 +15,25 @@ const (
 	DONE
 )
 
-func (s status) MarshalJSON() ([]byte, error) {
+func (s status) String() string {
 	switch s {
 	case UNKNOWN:
-		return []byte("\"UNKNOWN\""), nil
+		return "UNKNOWN"
 	case TODO:
-		return []byte("\"TODO\""), nil
+		return "TODO"
 	case DONE:
-		return []byte("\"DONE\""), nil
+		return "DONE"
 	default:
-		return nil, errors.New("status.MarshalJSON: unknown value")
+		return ""
 	}
+}
+
+func (s status) MarshalJSON() ([]byte, error) {
+	str := s.String()
+	if str == "" {
+		return []byte(fmt.Sprintf(`"%s"`, str)), errors.New("status.MarshalJSON: unknown value")
+	}
+	return []byte(str), nil
 }
 
 func (s *status) UnmarshalJSON(data []byte) error {
