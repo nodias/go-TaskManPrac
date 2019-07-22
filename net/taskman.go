@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"errors"
+	"html/template"
 	"log"
 	"net/http"
 
@@ -12,21 +13,22 @@ import (
 const pathPrefix = "/api/v1/task/"
 const htmlPrefix = "/task/"
 
-var memoryDataAccess DataAccess
+var memoryDataAccess task.DataAccess
 
-func init(){
-	memoryDataAccess = NewMemoryDataAccess()
+func init() {
+	memoryDataAccess = task.NewMemoryDataAccess()
 }
 
 func main() {
 	http.HandleFunc(pathPrefix, myhandler)
+	http.HandleFunc(htmlPrefix, htmlHandler)
 	log.Println("Server ON!!")
 	log.Fatal(http.ListenAndServe(":7000", nil))
 }
 
 func myhandler(w http.ResponseWriter, r *http.Request) {
-	getID := func() (ID, error) {
-		id := ID(r.URL.Path[len(pathPrefix):])
+	getID := func() (task.ID, error) {
+		id := task.ID(r.URL.Path[len(pathPrefix):])
 		if id == "" {
 			return id, errors.New("apiHandler: ID is empty")
 		}
@@ -83,11 +85,12 @@ func myhandler(w http.ResponseWriter, r *http.Request) {
 			})
 			if err != nil {
 				log.Println(err)
-				return }
+				return
+			}
 		}
 	case "PUT":
 		id, err := getID()
-		if err!= nil {
+		if err != nil {
 			log.Println(err)
 			return
 		}
@@ -116,13 +119,43 @@ func myhandler(w http.ResponseWriter, r *http.Request) {
 		}
 		err = memoryDataAccess.Delete(id)
 		err = json.NewEncoder(w).Encode(Response{
-			Id:   id,
-			Err:  ResponseErr{err},
+			Id:  id,
+			Err: ResponseErr{err},
 		})
-		if err!= nil {
+		if err != nil {
 			log.Println(err)
 			return
 		}
 
+	}
+}
+
+var tmpl = template.Must(template.ParseGlob("net/html/*.html"))
+
+func htmlHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "GET" {
+		log.Println(r.Method, "method is not supported")
+	}
+	getID := func() (task.ID, error) {
+		id := task.ID(r.URL.Path[len(htmlPrefix):])
+		if id == "" {
+			return "", errors.New("htmlHandler : ID is empty")
+		}
+		return id, nil
+	}
+	id, err := getID()
+	if err != nil {
+		log.Println(err)
+		return
+	}
+	t, err := memoryDataAccess.Get(id)
+	err = tmpl.ExecuteTemplate(w, "task.html", &Response{
+		Id:   id,
+		Task: t,
+		Err:  ResponseErr{err},
+	})
+	if err != nil {
+		log.Println(err)
+		return
 	}
 }

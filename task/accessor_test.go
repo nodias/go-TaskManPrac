@@ -1,10 +1,8 @@
-package main
+package task
 
 import (
 	"reflect"
 	"testing"
-
-	task "github.com/nodias/go-TaskManPrac/task"
 )
 
 func Test_NewMemoryDataAccess(t *testing.T) {

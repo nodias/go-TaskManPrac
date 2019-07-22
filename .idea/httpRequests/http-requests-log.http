@@ -1,35 +1,15 @@
-GET http://localhost:7000/api/v1/task/1
+GET http://localhost:7000/task/1
 Accept: application/json
 
-<> 2019-07-12T024842.200.txt
-
-###
-
-POST http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/x-www-form-urlencoded
-
-task={"title":"mytitle" }
-
-<> 2019-07-12T024841.200.txt
-
-###
-
-POST http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/x-www-form-urlencoded
-
-task={"title":"mytitle" }
-
-<> 2019-07-12T024825.200.txt
+<> 2019-07-22T054543.200.html
 
 ###
 
 GET http://localhost:7000/api/v1/task/1
 Accept: application/json
 
+<> 2019-07-22T054542-1.200.txt
+
 ###
 
 POST http://localhost:7000/api/v1/task/
@@ -37,7 +17,274 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/x-www-form-urlencoded
 
-task={"title":"mytitle" }
+task={"title":"mytitle", "status":"TODO" }
+
+<> 2019-07-22T054542.200.txt
+
+###
+
+GET http://localhost:7000/task/1
+Accept: application/json
+
+<> 2019-07-22T052045.200.html
+
+###
+
+GET http://localhost:7000/api/v1/task/1
+Accept: application/json
+
+<> 2019-07-22T052045-1.200.txt
+
+###
+
+POST http://localhost:7000/api/v1/task/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+task={"title":"mytitle", "status":"TODO" }
+
+<> 2019-07-22T052045.200.txt
+
+###
+
+GET http://localhost:7000/task/1
+Accept: application/json
+
+<> 2019-07-22T051543.200.html
+
+###
+
+GET http://localhost:7000/api/v1/task/1
+Accept: application/json
+
+<> 2019-07-22T051542-1.200.txt
+
+###
+
+POST http://localhost:7000/api/v1/task/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+task={"title":"mytitle", "status":"TODO" }
+
+<> 2019-07-22T051542.200.txt
+
+###
+
+GET http://localhost:7000/task/1
+Accept: application/json
+
+<> 2019-07-22T051355.200.html
+
+###
+
+GET http://localhost:7000/api/v1/task/1
+Accept: application/json
+
+<> 2019-07-22T051355.200.txt
+
+###
+
+POST http://localhost:7000/api/v1/task/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+task={"title":"mytitle", "status":"TODO" }
+
+<> 2019-07-22T051354.200.txt
+
+###
+
+GET http://localhost:7000/task/1
+Accept: application/json
+
+<> 2019-07-22T051319.200.html
+
+###
+
+GET http://localhost:7000/api/v1/task/1
+Accept: application/json
+
+<> 2019-07-22T051319-1.200.txt
+
+###
+
+POST http://localhost:7000/api/v1/task/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+task={"title":"mytitle", "status":"TODO" }
+
+<> 2019-07-22T051319.200.txt
+
+###
+
+GET http://localhost:7000/task/1
+Accept: application/json
+
+<> 2019-07-22T051259.200.html
+
+###
+
+GET http://localhost:7000/api/v1/task/1
+Accept: application/json
+
+<> 2019-07-22T051258-1.200.txt
+
+###
+
+POST http://localhost:7000/api/v1/task/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+task={"title":"mytitle", "status":"TODO" }
+
+<> 2019-07-22T051258.200.txt
+
+###
+
+GET http://localhost:7000/task/1
+Accept: application/json
+
+<> 2019-07-22T051206.200.html
+
+###
+
+GET http://localhost:7000/api/v1/task/1
+Accept: application/json
+
+<> 2019-07-22T051206-1.200.txt
+
+###
+
+POST http://localhost:7000/api/v1/task/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+task={"title":"mytitle", "status":"TODO" }
+
+<> 2019-07-22T051206.200.txt
+
+###
+
+GET http://localhost:7000/task/1
+Accept: application/json
+
+<> 2019-07-22T051134.200.html
+
+###
+
+GET http://localhost:7000/api/v1/task/1
+Accept: application/json
+
+<> 2019-07-22T051134-1.200.txt
+
+###
+
+POST http://localhost:7000/api/v1/task/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+task={"title":"mytitle", "status":"TODO" }
+
+<> 2019-07-22T051134.200.txt
+
+###
+
+GET http://localhost:7000/task/1
+Accept: application/json
+
+<> 2019-07-22T051045.200.html
+
+###
+
+GET http://localhost:7000/api/v1/task/1
+Accept: application/json
+
+<> 2019-07-22T051045-1.200.txt
+
+###
+
+POST http://localhost:7000/api/v1/task/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+task={"title":"mytitle", "status":"TODO" }
+
+<> 2019-07-22T051045.200.txt
+
+###
+
+POST http://localhost:7000/api/v1/task/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+task={"title":"mytitle", "status":"TODO" }
+
+<> 2019-07-22T050817.200.txt
+
+###
+
+POST http://localhost:7000/api/v1/task/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+task={"title":"mytitle", "status":"TODO" }
+
+<> 2019-07-22T050744.200.txt
+
+###
+
+POST http://localhost:7000/api/v1/task/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+task={"title":"mytitle", "status":"TODO" }
+
+<> 2019-07-22T050631.200.txt
+
+###
+
+GET http://localhost:7000/task/1
+Accept: application/json
+
+<> 2019-07-22T050552.200.html
+
+###
+
+GET http://localhost:7000/api/v1/task/1
+Accept: application/json
+
+<> 2019-07-22T050552-1.200.txt
+
+###
+
+POST http://localhost:7000/api/v1/task/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+task={"title":"mytitle", "status":"TODO" }
+
+<> 2019-07-22T050552.200.txt
+
+###
+
+GET http://localhost:7000/task/1
+Accept: application/json
+
+<> 2019-07-22T045724.200.html
 
 ###
 
@@ -51,7 +298,7 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/x-www-form-urlencoded
 
-task={"title":"mytitle" }
+task={"title":"mytitle", "status":"TODO" }
 
 ###
 
@@ -60,9 +307,7 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/x-www-form-urlencoded
 
-task={"title":"mytitle" }
-
-<> 2019-07-12T023724.200.txt
+task={"title":"mytitle", "status":"TODO" }
 
 ###
 
@@ -71,9 +316,7 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/x-www-form-urlencoded
 
-task={"title":"mytitle" }
-
-<> 2019-07-12T023530.200.txt
+task={"title":"mytitle", "status":"TODO" }
 
 ###
 
@@ -82,9 +325,7 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/x-www-form-urlencoded
 
-task={"title":"mytitle" }
-
-<> 2019-07-12T023522.200.txt
+task={"title":"mytitle", "status":"TODO" }
 
 ###
 
@@ -93,50 +334,19 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/x-www-form-urlencoded
 
-task={"title":"mytitle" }
-
-<> 2019-07-12T023446.200.txt
+task={"title":"mytitle", "status":"TODO" }
 
 ###
 
-POST http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/x-www-form-urlencoded
+GET http://localhost:7000/task/1
+Accept: application/json
 
-task={"title":"mytitle" }
-
-<> 2019-07-12T023434.200.txt
-
-###
-
-POST http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/x-www-form-urlencoded
-
-task={"title":"mytitle" }
-
-<> 2019-07-12T023420.200.txt
-
-###
-
-POST http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/x-www-form-urlencoded
-
-task={"title":"mytitle" }
-
-<> 2019-07-12T023102.200.txt
+<> 2019-07-22T042857.200.html
 
 ###
 
 GET http://localhost:7000/api/v1/task/1
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-07-12T021811-1.200.txt
+Accept: application/json
 
 ###
 
@@ -145,36 +355,41 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/x-www-form-urlencoded
 
-task={"title":"mytitle" }
+task={"title":"mytitle", "status":"TODO" }
 
-<> 2019-07-12T021811.200.txt
+###
+
+POST http://localhost:7000/api/v1/task/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+task={"title":"mytitle", "status":'"TODO"' }
+
+###
+
+POST http://localhost:7000/api/v1/task/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+task={"title":"mytitle", "status":`"TODO"` }
+
+###
+
+POST http://localhost:7000/api/v1/task/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+
+task={"title":"mytitle", "status":"`TODO`" }
 
 ###
 
 GET http://localhost:7000/api/v1/task/1
-Accept: */*
-Cache-Control: no-cache
+Accept: application/json
 
-<> 2019-07-12T021758-1.200.txt
-
-###
-
-POST http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/x-www-form-urlencoded
-
-task={"title":"mytitle" }
-
-<> 2019-07-12T021758.200.txt
-
-###
-
-GET http://localhost:7000/api/v1/task/1
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-07-12T021710.200.txt
+<> 2019-07-22T042601.200.txt
 
 ###
 
@@ -183,17 +398,7 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/x-www-form-urlencoded
 
-task={"title":"mytitle" }
-
-<> 2019-07-12T021709.200.txt
-
-###
-
-GET http://localhost:7000/api/v1/task/1
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-07-12T021226.200.txt
+task={"title":"mytitle", "status":"`TODO`" }
 
 ###
 
@@ -202,17 +407,7 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/x-www-form-urlencoded
 
-task={"title":"mytitle" }
-
-<> 2019-07-12T021222.200.txt
-
-###
-
-GET http://localhost:7000/api/v1/task/1
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-07-12T021214.200.txt
+task={"title":"mytitle", "status":"`TODO`" }
 
 ###
 
@@ -221,202 +416,7 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/x-www-form-urlencoded
 
-task={"title":"mytitle" }
-
-<> 2019-07-12T021059.200.txt
-
-###
-
-GET http://localhost:7000/api/v1/task/1
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-07-12T021033.200.txt
-
-###
-
-POST http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/x-www-form-urlencoded
-
-task={"title":"mytitle" }
-
-<> 2019-07-12T020712.200.txt
-
-###
-
-POST http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/x-www-form-urlencoded
-
-task={"title":"mytitle" }
-
-<> 2019-07-12T020350.200.txt
-
-###
-
-POST http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-task={"title":"mytitle" }
-
-###
-
-POST http://localhost:7000/api/v1/task/?task={"title":"mytitle"}
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-"task"{ "title":"mytitle" }
-
-###
-
-POST http://localhost:7000/api/v1/task/?=&task={"title":"mytitle"}
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-###
-
-POST http://localhost:7000/api/v1/task/?=&task={"title":"mytitle"}
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-###
-
-POST http://localhost:7000/api/v1/task/?=
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-task : { "title":"wow" }
-
-###
-
-POST http://localhost:7000/api/v1/task/?=
-Accept: */*
-Cache-Control: no-cache
-
-task : { "title":"wow" }
-
-###
-
-POST http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-
-task : { "title":"wow" }
-
-###
-
-POST http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-
-task : { "title":"wow" }
-
-###
-
-POST http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-
-task : { "title":"wow" }
-
-###
-
-POST http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-
-"task" : { "title":"wow" }
-
-###
-
-POST http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-
-"task" : { "title":"wow" }
-
-###
-
-POST http://localhost:7000/api/v1/task/?task={"title":"my task"}
-Accept: */*
-Cache-Control: no-cache
-
-###
-
-POST http://localhost:7000/api/v1/task/?task={"title":"my task"}
-Accept: */*
-Cache-Control: no-cache
-
-###
-
-POST http://localhost:7000/api/v1/task/?task={"title":"my task"}
-Accept: */*
-Cache-Control: no-cache
-
-###
-
-POST http://localhost:7000/api/v1/task/?task={"title":"my task"}
-Accept: */*
-Cache-Control: no-cache
-
-###
-
-POST http://localhost:7000/api/v1/task/?task={"title":"my task"}
-Accept: */*
-Cache-Control: no-cache
-
-###
-
-POST http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-
-###
-
-POST http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-
-###
-
-GET http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-
-###
-
-GET http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-
-###
-
-GET http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-
-###
-
-GET http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-07-11T050040.200.txt
-
-###
-
-GET http://localhost:7000/api/v1/task/
-Accept: */*
-Cache-Control: no-cache
+task={"title":"mytitle", "status":'TODO' }
 
 ###
 

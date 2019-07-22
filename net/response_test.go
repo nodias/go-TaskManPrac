@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"github.com/nodias/go-TaskManPrac/task"
 	"reflect"
 	"testing"
 )
@@ -23,7 +24,7 @@ func Test_ResponseErr_MarshalJSON(t *testing.T) {
 		},
 		{
 			"success2",
-			[]interface{}{ErrTaskNotExist},
+			[]interface{}{task.ErrTaskNotExist},
 			`"task does not exist"`,
 			nil,
 		},
@@ -59,7 +60,7 @@ func Test_ResponseErr_UnmarshalJSON(t *testing.T) {
 		{
 			"success - ErrTaskNotExist",
 			[]interface{}{[]byte(`"task does not exist"`)},
-			ResponseErr{ErrTaskNotExist},
+			ResponseErr{task.ErrTaskNotExist},
 			"",
 		},
 		{

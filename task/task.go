@@ -31,18 +31,18 @@ func (s status) String() string {
 func (s status) MarshalJSON() ([]byte, error) {
 	str := s.String()
 	if str == "" {
-		return []byte(fmt.Sprintf(`"%s"`, str)), errors.New("status.MarshalJSON: unknown value")
+		return nil, errors.New("status.MarshalJSON: unknown value")
 	}
-	return []byte(str), nil
+	return []byte(fmt.Sprintf("\"%s\"", str)), nil
 }
 
 func (s *status) UnmarshalJSON(data []byte) error {
 	switch string(data) {
-	case "\"UNKNOWN\"":
+	case `"UNKNOWN"`:
 		*s = UNKNOWN
-	case "\"TODO\"":
+	case `"TODO"`:
 		*s = TODO
-	case "\"DONE\"":
+	case `"DONE"`:
 		*s = DONE
 	default:
 		return errors.New("status.UnmarshalJSON: unknown value")

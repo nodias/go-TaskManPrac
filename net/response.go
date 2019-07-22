@@ -7,8 +7,6 @@ import (
 	"github.com/nodias/go-TaskManPrac/task"
 )
 
-var ErrTaskNotExist = errors.New("task does not exist")
-
 type ResponseErr struct {
 	Err error `json:"err"`
 }
@@ -32,8 +30,8 @@ func (r *ResponseErr) UnmarshalJSON(b []byte) error {
 	}
 	switch vt := v.(type) {
 	case string:
-		if vt == ErrTaskNotExist.Error() {
-			r.Err = ErrTaskNotExist
+		if vt == task.ErrTaskNotExist.Error() {
+			r.Err = task.ErrTaskNotExist
 			return nil
 		}
 		r.Err = errors.New(vt)
@@ -44,7 +42,7 @@ func (r *ResponseErr) UnmarshalJSON(b []byte) error {
 }
 
 type Response struct{
-	Id ID
-	Task task.Task
-    Err ResponseErr
+	Id   task.ID     `json:"id,omitempty"`
+	Task task.Task   `json:"task"`
+    Err  ResponseErr `json:"err"`
 }
