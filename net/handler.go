@@ -10,7 +10,7 @@ import (
 	"net/http"
 )
 
-var tmpl = template.Must(template.ParseGlob("net/html/*.html"))
+var tmpl = template.Must(template.ParseGlob("html/*.html"))
 
 func htmlHandler(w http.ResponseWriter, r *http.Request) {
 	id := task.ID(mux.Vars(r)["id"])

@@ -55,8 +55,7 @@ type Deadline struct {
 }
 
 func NewDeadline(t time.Time) *Deadline {
-	d := Deadline{t}
-	return &d
+	return &Deadline{t}
 }
 
 func (d Deadline) MarshalJSON() ([]byte, error) {

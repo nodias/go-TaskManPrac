@@ -15,7 +15,7 @@ func Test_NewMemoryDataAccess(t *testing.T) {
 		{
 			"sucess",
 			[]interface{}{},
-			InMemoryAccessor{tasks: map[ID]task.Task{}, nextID: int64(1)},
+			InMemoryAccessor{tasks: map[ID]Task{}, nextID: int64(1)},
 			nil,
 		},
 	}
@@ -28,10 +28,10 @@ func Test_NewMemoryDataAccess(t *testing.T) {
 }
 func Test_MemoryDataAccess_Get(t *testing.T) {
 	memoryDataAccess := InMemoryAccessor{
-		tasks: map[ID]task.Task{
+		tasks: map[ID]Task{
 			"1": {
 				"laundry",
-				task.TODO,
+				TODO,
 				nil,
 				nil,
 			},
@@ -42,15 +42,15 @@ func Test_MemoryDataAccess_Get(t *testing.T) {
 	cases := []struct {
 		title   string
 		args    []interface{}
-		wantRes task.Task
+		wantRes Task
 		wantErr error
 	}{
 		{
 			"sucess",
 			[]interface{}{ID("1")},
-			task.Task{
+			Task{
 				"laundry",
-				task.TODO,
+				TODO,
 				nil,
 				nil,
 			},
@@ -58,7 +58,7 @@ func Test_MemoryDataAccess_Get(t *testing.T) {
 		}, {
 			"ErrTaskNotExist",
 			[]interface{}{ID("2")},
-			task.Task{},
+			Task{},
 			ErrTaskNotExist,
 		},
 	}
@@ -73,10 +73,10 @@ func Test_MemoryDataAccess_Get(t *testing.T) {
 
 func Test_MemoryDataAccess_Put(t *testing.T) {
 	memoryDataAccess := InMemoryAccessor{
-		tasks: map[ID]task.Task{
+		tasks: map[ID]Task{
 			"1": {
 				"laundry",
-				task.TODO,
+				TODO,
 				nil,
 				nil,
 			},
@@ -87,31 +87,31 @@ func Test_MemoryDataAccess_Put(t *testing.T) {
 	cases := []struct {
 		title   string
 		args    []interface{}
-		wantRes task.Task
+		wantRes Task
 		wantErr error
 	}{
 		{
 			"sucess",
 			[]interface{}{
 				ID("1"),
-				task.Task{"laundry", task.DONE, nil, nil},
+				Task{"laundry", DONE, nil, nil},
 			},
-			task.Task{"laundry", task.DONE, nil, nil},
+			Task{"laundry", DONE, nil, nil},
 			nil,
 		},
 		{
 			"ErrTaskNotExist",
 			[]interface{}{
 				ID("2"),
-				task.Task{"laundry", task.DONE, nil, nil},
+				Task{"laundry", DONE, nil, nil},
 			},
-			task.Task{},
+			Task{},
 			ErrTaskNotExist,
 		},
 	}
 	for _, c := range cases {
 		idmock := c.args[0].(ID)
-		taskmock := c.args[1].(task.Task)
+		taskmock := c.args[1].(Task)
 		err := memoryDataAccess.Put(idmock, taskmock)
 		res, _ := memoryDataAccess.Get(idmock)
 		if !reflect.DeepEqual(res, c.wantRes) || !reflect.DeepEqual(err, c.wantErr) {
@@ -122,27 +122,27 @@ func Test_MemoryDataAccess_Put(t *testing.T) {
 
 func Test_MemoryDataAccess_Post(t *testing.T) {
 	memoryDataAccess := InMemoryAccessor{
-		tasks:  map[ID]task.Task{},
+		tasks:  map[ID]Task{},
 		nextID: int64(1),
 	}
 
 	cases := []struct {
 		title   string
 		args    []interface{}
-		wantRes task.Task
+		wantRes Task
 		wantErr error
 	}{
 		{
 			"sucess",
 			[]interface{}{
-				task.Task{"laundry", task.TODO, nil, nil},
+				Task{"laundry", TODO, nil, nil},
 			},
-			task.Task{"laundry", task.TODO, nil, nil},
+			Task{"laundry", TODO, nil, nil},
 			nil,
 		},
 	}
 	for _, c := range cases {
-		taskmock := c.args[0].(task.Task)
+		taskmock := c.args[0].(Task)
 		id, err := memoryDataAccess.Post(taskmock)
 		res, _ := memoryDataAccess.Get(id)
 		if !reflect.DeepEqual(res, c.wantRes) || !reflect.DeepEqual(err, c.wantErr) {
@@ -153,10 +153,10 @@ func Test_MemoryDataAccess_Post(t *testing.T) {
 
 func Test_MemoryDataAccess_Delete(t *testing.T) {
 	memoryDataAccess := InMemoryAccessor{
-		tasks: map[ID]task.Task{
+		tasks: map[ID]Task{
 			"1": {
 				"laundry",
-				task.TODO,
+				TODO,
 				nil,
 				nil,
 			},
@@ -167,7 +167,7 @@ func Test_MemoryDataAccess_Delete(t *testing.T) {
 	cases := []struct {
 		title   string
 		args    []interface{}
-		wantRes task.Task
+		wantRes Task
 		wantErr error
 	}{
 		{
@@ -175,7 +175,7 @@ func Test_MemoryDataAccess_Delete(t *testing.T) {
 			[]interface{}{
 				ID("1"),
 			},
-			task.Task{},
+			Task{},
 			nil,
 		},
 		{
@@ -183,7 +183,7 @@ func Test_MemoryDataAccess_Delete(t *testing.T) {
 			[]interface{}{
 				ID("2"),
 			},
-			task.Task{},
+			Task{},
 			ErrTaskNotExist,
 		},
 	}
