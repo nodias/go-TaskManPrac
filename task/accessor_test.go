@@ -9,25 +9,25 @@ func Test_NewMemoryDataAccess(t *testing.T) {
 	cases := []struct {
 		title   string
 		args    []interface{}
-		wantRes MemoryDataAccess
+		wantRes InMemoryAccessor
 		wantErr error
 	}{
 		{
 			"sucess",
 			[]interface{}{},
-			MemoryDataAccess{tasks: map[ID]task.Task{}, nextID: int64(1)},
+			InMemoryAccessor{tasks: map[ID]task.Task{}, nextID: int64(1)},
 			nil,
 		},
 	}
 	for _, c := range cases {
-		res := NewMemoryDataAccess()
+		res := NewInmemoryAccessor()
 		if reflect.TypeOf(c.wantRes) == reflect.TypeOf(res) {
 			t.Errorf("Test_MemoryDataAccess_Get - %s \n expect res: %v \n but res: %v", c.title, c.wantRes, res)
 		}
 	}
 }
 func Test_MemoryDataAccess_Get(t *testing.T) {
-	memoryDataAccess := MemoryDataAccess{
+	memoryDataAccess := InMemoryAccessor{
 		tasks: map[ID]task.Task{
 			"1": {
 				"laundry",
@@ -72,7 +72,7 @@ func Test_MemoryDataAccess_Get(t *testing.T) {
 }
 
 func Test_MemoryDataAccess_Put(t *testing.T) {
-	memoryDataAccess := MemoryDataAccess{
+	memoryDataAccess := InMemoryAccessor{
 		tasks: map[ID]task.Task{
 			"1": {
 				"laundry",
@@ -121,7 +121,7 @@ func Test_MemoryDataAccess_Put(t *testing.T) {
 }
 
 func Test_MemoryDataAccess_Post(t *testing.T) {
-	memoryDataAccess := MemoryDataAccess{
+	memoryDataAccess := InMemoryAccessor{
 		tasks:  map[ID]task.Task{},
 		nextID: int64(1),
 	}
@@ -152,7 +152,7 @@ func Test_MemoryDataAccess_Post(t *testing.T) {
 }
 
 func Test_MemoryDataAccess_Delete(t *testing.T) {
-	memoryDataAccess := MemoryDataAccess{
+	memoryDataAccess := InMemoryAccessor{
 		tasks: map[ID]task.Task{
 			"1": {
 				"laundry",
