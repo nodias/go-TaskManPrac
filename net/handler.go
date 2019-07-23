@@ -5,17 +5,22 @@ import (
 	"errors"
 	"github.com/gorilla/mux"
 	"github.com/nodias/go-TaskManPrac/task"
-	"html/template"
+	"github.com/unrolled/render"
 	"log"
 	"net/http"
 )
 
-var tmpl = template.Must(template.ParseGlob("html/*.html"))
+
+var renderer *render.Render
+
+func init(){
+	renderer = render.New()
+}
 
 func htmlHandler(w http.ResponseWriter, r *http.Request) {
 	id := task.ID(mux.Vars(r)["id"])
 	t, err := m.Get(id)
-	err = tmpl.ExecuteTemplate(w, "task.html", &Response{
+	err = renderer.HTML(w, http.StatusOK, "task", &Response{
 		Id:   id,
 		Task: t,
 		Err:  ResponseErr{err},
@@ -31,7 +36,8 @@ var m = task.NewInmemoryAccessor()
 func getTasks(r *http.Request) ([]task.Task, error) {
 	var result []task.Task
 	err := r.ParseForm()
-	if err != nil { return nil, err
+	if err != nil {
+		return nil, err
 	}
 	encodedTasks, ok := r.PostForm["task"]
 	if !ok {
@@ -49,7 +55,7 @@ func getTasks(r *http.Request) ([]task.Task, error) {
 
 func apiGetHandler(w http.ResponseWriter, r *http.Request) {
 	id := task.ID(mux.Vars(r)["id"])
-	t, err :=m.Get(id)
+	t, err := m.Get(id)
 	err = json.NewEncoder(w).Encode(Response{
 		Id:   id,
 		Task: t,
@@ -106,8 +112,8 @@ func apiDeleteHandler(w http.ResponseWriter, r *http.Request) {
 	id := task.ID(mux.Vars(r)["id"])
 	err := m.Delete(id)
 	err = json.NewEncoder(w).Encode(Response{
-		Id:   id,
-		Err:  ResponseErr{err},
+		Id:  id,
+		Err: ResponseErr{err},
 	})
 
 }

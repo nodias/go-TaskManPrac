@@ -41,8 +41,8 @@ func (r *ResponseErr) UnmarshalJSON(b []byte) error {
 	}
 }
 
-type Response struct{
+type Response struct {
 	Id   task.ID     `json:"id,omitempty"`
 	Task task.Task   `json:"task"`
-    Err  ResponseErr `json:"err"`
+	Err  ResponseErr `json:"err"`
 }

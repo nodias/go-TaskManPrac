@@ -22,9 +22,10 @@ func main() {
 	s := r.PathPrefix(apiPathPrefix).Subrouter()
 	s.HandleFunc(idPattern, apiGetHandler).Methods("GET")
 	s.HandleFunc(idPattern, apiPutHandler).Methods("PUT")
-	s.HandleFunc(idPattern, apiPostHandler).Methods("POST")
+	s.HandleFunc("/", apiPostHandler).Methods("POST")
 	s.HandleFunc(idPattern, apiDeleteHandler).Methods("DELETE")
 
+	http.Handle("/", r)
 	log.Println("Server ON!!")
 	log.Fatal(http.ListenAndServe(":7000", nil))
 }
